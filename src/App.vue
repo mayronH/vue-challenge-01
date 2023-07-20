@@ -25,8 +25,10 @@ watch(pressed, () => {
 })
 watch(ctrlZ, (e) => {
   if (e) {
-    history.value.push(points.value[points.value.length - 1])
-    points.value.pop()
+    if (points.value.length > 0) {
+      history.value.push(points.value[points.value.length - 1])
+      points.value.pop()
+    }
   }
 })
 watch(ctrlY, (e) => {
